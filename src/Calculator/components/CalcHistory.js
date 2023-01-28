@@ -24,14 +24,12 @@ class CalcHistory extends React.Component {
     render() {
         const { lastInList, historyStyle } = this.props.classes;
         const history = this.props.history;
-
         return (
             <div className={historyStyle}>
                 {history.map((example, index) => {
-                    if (index === history.length - 1)
-                        return <div key={index} className={lastInList}>{example}</div>
-                    else
-                        return <div key={index}>{example}</div>
+                    return (index === history.length - 1)
+                        ? <div key={index} className={lastInList}>{example}</div>
+                        : <div key={index}>{example}</div>
                 })}
             </div>
         );

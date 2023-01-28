@@ -10,7 +10,7 @@ const styles = () => ({
         height: '40px',
         width: '220px',
         backgroundColor: '#3b3b3b',
-        color: '#ffffff',
+        color: '#fff',
         border: 'none',
         fontSize: 'larger',
         fontWeight: '500',
@@ -25,10 +25,10 @@ class CalcScreen extends React.Component {
         const { inputStyle } = this.props.classes;
         return (
             <input
-                type="text"
-                value={this.props.currentField}
                 className={inputStyle}
+                type="text"
                 onChange={this.props.onChange}
+                value={this.props.currentField}
             />
         );
     }

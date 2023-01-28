@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, withStyles} from "@material-ui/core";
+import { Button, withStyles } from "@material-ui/core";
 
 
 const styles = () => ({
@@ -9,7 +9,7 @@ const styles = () => ({
         gridAutoRows: 'minmax(60px, auto)',
         marginBottom: '10px',
     },
-    otherBtnStyle: {
+    signBtnStyle: {
         variant: "text",
         color: "salmon",
         size: "large",
@@ -25,7 +25,7 @@ const styles = () => ({
 
 class CalcButton extends React.Component {
     render() {
-        const { buttonsStyle, numBtnStyle, otherBtnStyle } = this.props.classes;
+        const { buttonsStyle, numBtnStyle, signBtnStyle } = this.props.classes;
         const buttonValues = [7, 8, 9, '/', 4, 5, 6, '*', 1, 2, 3, '-', 'C', 0, '=', '+'];
         return (
             <div className={buttonsStyle} >
@@ -34,15 +34,15 @@ class CalcButton extends React.Component {
                         return <Button
                             className={numBtnStyle}
                             key={btn}
-                            onClick={ () => {this.props.onDigitClick(btn)} }
+                            onClick={() => {this.props.onDigitClick(btn)}}
                         >
                             {btn}
                         </Button>
                     } else {
                         return <Button
-                            className={otherBtnStyle}
+                            className={signBtnStyle}
                             key={btn}
-                            onClick={ () => {this.props.onSignClick(btn)} }
+                            onClick={() => {this.props.onSignClick(btn)}}
                         >
                             <b>{btn}</b>
                         </Button>

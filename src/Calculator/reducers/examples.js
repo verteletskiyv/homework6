@@ -2,7 +2,7 @@ const initialState = {
     isLoading: false,
     isError: false,
     list: [],
-    name: "This is Expressions!",
+    name: "This is Expressions :)",
 };
 
 export default (state = initialState, action) => {
@@ -30,4 +30,4 @@ export default (state = initialState, action) => {
         }
         default: return state;
     }
-}
+};

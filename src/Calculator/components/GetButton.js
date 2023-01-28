@@ -2,6 +2,7 @@ import React from "react";
 import {Button} from "@material-ui/core";
 import { withStyles } from "@material-ui/core";
 
+
 const styles = () => ({
     btnStyle: {
         border: '2px solid #E06149',
@@ -16,8 +17,8 @@ class GetButton extends React.Component {
         return (
             <Button
                 className={btnStyle}
-                variant="outlined"
                 onClick={this.props.onClick}
+                variant="outlined"
             >
                 Получить и решить примеры
             </Button>
@@ -25,4 +26,4 @@ class GetButton extends React.Component {
     }
 }
 
-export default withStyles(styles) (GetButton);
+export default withStyles(styles)(GetButton);

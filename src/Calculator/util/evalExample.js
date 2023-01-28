@@ -1,10 +1,9 @@
-const calculateResult = math => {
-    let splitMath = math.split(/([*/]|\b\s*-|\b\s*\+)/g);
-    const a = Number(splitMath.at(0));
-    const b = Number(splitMath.at(splitMath.length - 1));
-    const o = splitMath.at(1).trim();
+import splitMaths from "./splitMath";
 
-    switch (o) {
+
+const evalExample = (math) => {
+    const {a, b, operation} = splitMaths(math);
+    switch (operation) {
         case '+':
             return (a + b) % 1 === 0
                 ? (a + b).toString()
@@ -17,7 +16,7 @@ const calculateResult = math => {
             if (b === 0)
                 throw Error("division by zero!");
             return (a / b) % 1 === 0
-                ? (a / b).toString()
+                ? Math.trunc(a / b).toString()
                 : (a / b).toFixed(1).toString();
         case '*':
             return (a * b) % 1 === 0
@@ -28,4 +27,4 @@ const calculateResult = math => {
     }
 };
 
-export default calculateResult;
+export default evalExample;

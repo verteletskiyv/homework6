@@ -1,4 +1,4 @@
-function getStateDetails(state) {
+const getStateDetails = (state) => {
     const containsSign = state.toString().startsWith('-')
         ? state.toString()
             .substring(1, state.length)
