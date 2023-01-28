@@ -34,6 +34,11 @@ class Calculator extends React.Component {
         }
     }
 
+    componentDidMount() {
+        const { actionFetchExamples } = this.props;
+        actionFetchExamples({ count: 5 });
+    }
+
     render() {
         return (
             <div style={style}>
@@ -50,28 +55,6 @@ class Calculator extends React.Component {
                 <GetButton onClick={this.handleGetClick} />
             </div>
         );
-    }
-
-    componentDidMount() {
-        const { actionFetchExamples } = this.props;
-        actionFetchExamples({ count: 5 });
-    }
-
-    calculateWithBtn = (btn) => {
-        let currHistory = this.state.history;
-        let currState = this.state.screen.toString();
-        let res = evalExample(currState);
-        if (currHistory.length > 8)
-            this.setState(() => currHistory.shift());
-
-        if (btn === '+' || btn === '-' || btn === '*' || btn === '/') {
-            this.setState(() => currHistory.push(currState + ' = ' + res));
-            this.setState({screen: res + ` ${btn} `});
-        } else if (btn === '=') {
-            this.setState(() => currHistory.push(currState + ' = ' + res));
-            this.setState({screen: res});
-        } else
-            this.setState(() => currHistory.push('Unknown operation'));
     }
 
     handleDigitClick = (value) => {
@@ -123,6 +106,23 @@ class Calculator extends React.Component {
                 this.setState({screen: currState + ` ${value} `});
             }
         }
+    }
+
+    calculateWithBtn = (btn) => {
+        let currHistory = this.state.history;
+        let currState = this.state.screen.toString();
+        let res = evalExample(currState);
+        if (currHistory.length > 8)
+            this.setState(() => currHistory.shift());
+
+        if (btn === '+' || btn === '-' || btn === '*' || btn === '/') {
+            this.setState(() => currHistory.push(currState + ' = ' + res));
+            this.setState({screen: res + ` ${btn} `});
+        } else if (btn === '=') {
+            this.setState(() => currHistory.push(currState + ' = ' + res));
+            this.setState({screen: res});
+        } else
+            this.setState(() => currHistory.push('Unknown operation'));
     }
 
     handleGetClick = () => {
