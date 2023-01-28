@@ -9,7 +9,7 @@ const styles = () => ({
         },
         height: '40px',
         width: '220px',
-        backgroundColor: '#333333',
+        backgroundColor: '#3b3b3b',
         color: '#ffffff',
         border: 'none',
         fontSize: 'larger',
@@ -20,9 +20,7 @@ const styles = () => ({
     },
 });
 
-
 class CalcScreen extends React.Component {
-
     render() {
         const { inputStyle } = this.props.classes;
         return (

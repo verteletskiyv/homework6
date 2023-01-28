@@ -12,7 +12,7 @@ const styles = () => ({
         color: 'grey',
         fontSize: 'large',
     },
-    firstInList: {
+    lastInList: {
         color: 'salmon',
         marginTop: '5px',
         fontWeight: '500',
@@ -20,19 +20,18 @@ const styles = () => ({
     }
 });
 
-
 class CalcHistory extends React.Component {
     render() {
-        const { firstInList, historyStyle } = this.props.classes;
+        const { lastInList, historyStyle } = this.props.classes;
         const history = this.props.history;
 
         return (
             <div className={historyStyle}>
-                {history.map((expression, index) => {
+                {history.map((example, index) => {
                     if (index === history.length - 1)
-                        return <div key={expression} className={firstInList}>{expression}</div>
+                        return <div key={index} className={lastInList}>{example}</div>
                     else
-                        return <div key={expression}>{expression}</div>
+                        return <div key={index}>{example}</div>
                 })}
             </div>
         );

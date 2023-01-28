@@ -1,13 +1,28 @@
 import React from "react";
 import {Button} from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 
+const styles = () => ({
+    btnStyle: {
+        border: '2px solid #E06149',
+        color: '#E06149',
+        fontWeight: '600',
+    },
+});
 
 class GetButton extends React.Component {
     render() {
+        const { btnStyle } = this.props.classes;
         return (
-            <Button variant="outlined" color="primary">Получить и решить примеры</Button>
+            <Button
+                className={btnStyle}
+                variant="outlined"
+                onClick={this.props.onClick}
+            >
+                Получить и решить примеры
+            </Button>
         );
     }
 }
 
-export default GetButton;
+export default withStyles(styles) (GetButton);

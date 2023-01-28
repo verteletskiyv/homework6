@@ -23,7 +23,6 @@ const styles = () => ({
     }
 });
 
-
 class CalcButton extends React.Component {
     render() {
         const { buttonsStyle, numBtnStyle, otherBtnStyle } = this.props.classes;
