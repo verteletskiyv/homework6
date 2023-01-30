@@ -14,7 +14,7 @@ const evalExample = (math) => {
                 : (a - b).toFixed(1).toString();
         case '/':
             if (b === 0)
-                throw Error("division by zero!");
+                return "Error division by zero!";
             return (a / b) % 1 === 0
                 ? Math.trunc(a / b).toString()
                 : (a / b).toFixed(1).toString();
@@ -23,7 +23,7 @@ const evalExample = (math) => {
                 ? (a * b).toString()
                 : (a * b).toFixed(1).toString();
         default:
-            throw Error("Unknown operation");
+            return "Error unknown operation";
     }
 };
 

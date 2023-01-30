@@ -1,33 +1,29 @@
 import React from "react";
-import { withStyles } from "@material-ui/core";
+import {withStyles, TextField} from "@material-ui/core";
 
 
-const styles = () => ({
-    inputStyle: {
-        '&:focus, &:active': {
-            outline: 'none',
-        },
-        height: '40px',
-        width: '220px',
-        backgroundColor: '#3b3b3b',
-        color: '#fff',
-        border: 'none',
-        fontSize: 'larger',
-        fontWeight: '500',
-        letterSpacing: '1px',
+const styles = {
+    input: {
+        borderTop: '1px dashed #5F5F5F',
+        padding: '10px 30px 0px 30px',
+        color: "white",
+        fontSize: '18px',
         textAlign: 'end',
-        padding: '0 30px',
-    },
-});
+        width: '220px',
+        letterSpacing: '1px',
+    }
+};
 
 class CalcScreen extends React.Component {
     render() {
-        const { inputStyle } = this.props.classes;
+        const {input} = this.props.classes;
         return (
-            <input
-                className={inputStyle}
-                type="text"
+            <TextField
                 onChange={this.props.onChange}
+                id="standard-textarea"
+                InputProps={{disableUnderline: true}}
+                inputProps={{className: input}}
+                multiline
                 value={this.props.currentField}
             />
         );

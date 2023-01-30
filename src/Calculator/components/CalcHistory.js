@@ -7,16 +7,15 @@ const styles = () => ({
         display: 'table-cell',
         verticalAlign: 'bottom',
         height: '200px',
-        width: '250px',
+        width: '260px',
         textAlign: 'end',
         color: 'grey',
         fontSize: 'large',
     },
     lastInList: {
         color: 'salmon',
-        marginTop: '5px',
-        fontWeight: '500',
-        fontSize: 'larger',
+        margin: '5px 0 5px 0',
+        fontSize: 'large',
     }
 });
 
