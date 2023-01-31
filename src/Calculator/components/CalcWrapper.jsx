@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles } from "@material-ui/core";
+import {withStyles} from "@material-ui/core";
 
 
 const styles = () => ({
@@ -19,7 +19,7 @@ const styles = () => ({
 
 class CalcWrapper extends React.Component {
     render() {
-        const { containerStyle } = this.props.classes;
+        const {containerStyle} = this.props.classes;
         return (
             <div className={containerStyle}>
                 {this.props.children}
