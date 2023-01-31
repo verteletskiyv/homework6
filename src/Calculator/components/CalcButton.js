@@ -25,28 +25,32 @@ const styles = () => ({
 
 class CalcButton extends React.Component {
     render() {
-        const { buttonsStyle, numBtnStyle, signBtnStyle } = this.props.classes;
-        const buttonValues = [7, 8, 9, '/', 4, 5, 6, '*', 1, 2, 3, '-', 'C', 0, '=', '+'];
+        const buttonValues =
+              [ 7, 8, 9, '/',
+                4, 5, 6, '*',
+                1, 2, 3, '-',
+                'C', 0, '=', '+' ];
+        const {
+            buttonsStyle,
+            numBtnStyle,
+            signBtnStyle
+        } = this.props.classes;
         return (
-            <div className={buttonsStyle} >
+            <div className={buttonsStyle}>
                 {buttonValues.map(btn => {
-                    if (typeof btn === 'number') {
-                        return <Button
+                    return (typeof btn === 'number')
+                        ? <Button
                             className={numBtnStyle}
                             key={btn}
-                            onClick={() => {this.props.onDigitClick(btn)}}
-                        >
+                            onClick={() => this.props.onDigitClick(btn)}>
                             {btn}
                         </Button>
-                    } else {
-                        return <Button
+                        : <Button
                             className={signBtnStyle}
                             key={btn}
-                            onClick={() => {this.props.onSignClick(btn)}}
-                        >
+                            onClick={() => this.props.onSignClick(btn)}>
                             <b>{btn}</b>
                         </Button>
-                    }
                 })}
             </div>
         );
